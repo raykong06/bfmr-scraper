@@ -1,5 +1,4 @@
-**BFMR Tracker**
-*https://www.bfmr.com/*
+**BFMR Tracker**: *https://www.bfmr.com/*
 
 Uploads relevant tracking information for your BFMR sales to a spreadsheet.
 
