@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 import requests
 import os
 from dotenv import load_dotenv
@@ -65,7 +66,9 @@ def main():
                 }
                 all_reservations.append(row)
         
-        all_reservations.sort(key=lambda x: (x["Date Reserved"], x["Item"]))
+        # Sort by Date Reserved (Month/Day/Year), then by Item name
+        all_reservations.sort(key=lambda x: (
+            datetime.strptime(x["Date Reserved"], "%m/%d/%Y %H:%M:%S"), x["Item"]))
 
         # Write to a CSV file
         with open(OUTPUT_FILE, "w", newline='', encoding="utf-8") as outfile:
